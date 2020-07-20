@@ -40,6 +40,8 @@
 #include "usbd_if.h"
 #include "dwt.h"
 
+#include "bootloader.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -58,6 +60,10 @@ void hw_config_init(void)
 
   /* Initialize the HAL */
   HAL_Init();
+
+
+  jumpToBootloader();
+
 
   /* Configure the system clock */
   SystemClock_Config();
